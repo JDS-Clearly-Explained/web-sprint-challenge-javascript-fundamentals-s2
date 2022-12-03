@@ -31,8 +31,10 @@ function myFunction() {
 */
 
 function summation(number) {
+  //create a variable to hold the sum
   let sum = 0;
   for (let i = 1; i <= number; i++) {
+    //add the current number to the sum
     sum += i;
   }
   return sum;
@@ -64,8 +66,11 @@ const zooAnimals = [
   */
 
   function animalNames(zooAnimals){
+    //create a new array to hold the names
     let displayNames = [];
+    //loop through the zooAnimals array
     zooAnimals.forEach((animal) => {
+      //for each animal, create a string with the name and scientific name and push it into the new array
       displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`);
     });
     return displayNames;
@@ -83,7 +88,9 @@ const zooAnimals = [
   */
 
   function lowerCaseNames(zooAnimals){
+    //create a variable to hold the names in lowercase using .map() which returns a new array
     let lowerCase = zooAnimals.map((animal) => {
+      //return the name of the animal in lowercase
       return animal.animal_name.toLowerCase();
     });
     return lowerCase;
@@ -99,6 +106,7 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(zooAnimals){
+    //create a variable to hold the animals with a population less than 5 using .filter() which returns a new array
     let lowPop = zooAnimals.filter((animal) => {
       return animal.population < 5;
     });
@@ -116,7 +124,9 @@ const zooAnimals = [
   */
 
   function USApop(zooAnimals){
+    //create a variable to hold the total population using .reduce() which returns a single value
     let totalPop = zooAnimals.reduce((acc, animal) => {
+      //add the population of the current animal to the accumulator
       return acc + animal.population;
     }, 0);
     return totalPop;
@@ -249,11 +259,16 @@ class CuboidMakerTwo{
   }
 }
 
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.volume()); // 100
 // console.log(cuboidTwo.surfaceArea()); // 130
 
 
